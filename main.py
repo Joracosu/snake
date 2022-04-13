@@ -13,7 +13,7 @@ def modulo_10_p_7(n,p):
 
 def numberOfAvailableDifferentPaths(board, snake, depth, solution=[], step=0, j=0):
     '''
-    This algorithm follows the 'Branch and Pount' philosopy. It iterates in deep for each solution in a 
+    This algorithm follows the 'Branch and Pound' philosophy. It iterates in deep for each solution in a 
     method called 'Depth First Search' (DFS). Basically it follow the next scheme:
     
         1. Form a sequence of elements as a queue with the root element of the tree.
