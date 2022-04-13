@@ -1,6 +1,6 @@
 '''
 This pack of classes has been developed in order to check the integrity of the values in a compacted way.
-Some properties are useless, but in future developes they can be used for something.
+Some properties are useless, but in future develops they can be used for something.
 
 The boundary check handle has been developed in order to raise code errors. With another approach, input 
 management could be included.
@@ -9,7 +9,7 @@ management could be included.
 
 '''
 In 'Board' class, is not necessary to set a property for rows, columns or size, nevertheless 
-they are been used to check the boundaries.
+they are being used to check the boundaries.
 '''
 class Board:
     def __init__(self, dimensions):
@@ -70,7 +70,7 @@ class Depth:
         
 '''
 A 'Snake_Segment' class has been created only to manage the integrity of the snake. This class is later 
-called from the 'Snake' class at the begining of the algorithm
+called from the 'Snake' class at the beginning of the algorithm
 '''        
 class Snake_Segment:
     def __get__(self, obj, value):
@@ -84,7 +84,7 @@ class Snake_Segment:
                 raise ValueError('Segment dimension incoherent.')
         # For each segment except the head...
         for n in range(1,len(value)):
-            # auxiliary variables to make the chek code more readable: 
+            # auxiliary variables to make the check code more readable: 
             #    d0 -> dimension row        d1 -> dimension column
             #    n0 -> previous segment     n1 -> current segment
             d0n0 = value[n-1][0]
@@ -92,9 +92,9 @@ class Snake_Segment:
             d1n0 = value[n-1][1]
             d1n1 = value[n][1]
             # Two double checks are made at the same time. If none of them are reached, then fails:
-            #    If row dimmension remains equal and the column dimmension differs one unit
+            #    If row dimension remains equal and the column dimension differs one unit
             #  or
-            #    If column dimmension remains equal and the row dimmension differs one unit
+            #    If column dimension remains equal and the row dimension differs one unit
             if not(d0n0 == d0n1 and abs(d1n0-d1n1) == 1 or d1n0 == d1n1 and abs(d0n0-d0n1) == 1):
                 raise ValueError('There is some discontinuity in the snake definition.')        
         self.value = value    
@@ -131,7 +131,7 @@ class Snake:
         # Empty dictionary where each segment studied will be stored
         set_snake = set()
         for segment in value:
-            # if a segment is found in the dictionary, there is a clash and the chek is finished
+            # if a segment is found in the dictionary, there is a clash and the check is finished
             if tuple(segment) in set_snake:
                 return True
             # otherwise the segment is added to the dictionary
@@ -139,7 +139,7 @@ class Snake:
                 set_snake.add(tuple(segment))         
         return False
     
-    # Determine if the full snake body is contained inside the playboard. Easily readable code
+    # Determine if the full snake body is contained inside the play-board. Easily readable code
     def body_outside_boundaries(self, value):
         for n in range(len(value)):
             for m in range(2):
